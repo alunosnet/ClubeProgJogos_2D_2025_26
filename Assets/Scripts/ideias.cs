@@ -4,7 +4,6 @@ public class ideias : MonoBehaviour
 {
     /*
      Ideias:
-        SLIDER para controlar o volume
         CENAS:
         Mudar de cena com várias portas
         Permitir que o player aparece em diferentes posições em função da cena de onde vem
