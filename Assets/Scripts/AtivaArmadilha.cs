@@ -27,7 +27,8 @@ public class AtivaArmadilha : MonoBehaviour
         PlayerMovement pm = collision.transform.GetComponent<PlayerMovement>();
         if (pm != null)
         {
-            rb_armadilha.simulated = true;
+            if (rb_armadilha != null)
+                rb_armadilha.simulated = true;
             //Se existir o sistema de particulas a ativar
             if (EfeitosAtivar != null)
             {

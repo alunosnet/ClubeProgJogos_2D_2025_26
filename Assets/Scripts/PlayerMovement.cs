@@ -52,11 +52,10 @@ public class PlayerMovement : MonoBehaviour
             VerificaPeChao(pe_e);
         //se está com os pés no chão e está a fazer a animação de saltar
         //parar
-        //Debug.Log(animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
+        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
         if (animator.GetCurrentAnimatorStateInfo(0).shortNameHash==-1481439722 &&
             IsGrounded)
         {
-            //TODO: interromper a animação
             animator.ResetControllerState(true);
         }
         //flip do sprite quando está a andar para a esquerda
