@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ideias.cs" />
+    <Compile Include="Assets\Scripts\Atirar.cs" />
     <Compile Include="Assets\Scripts\Vida.cs" />
     <Compile Include="Assets\Scripts\DestroiComTempo.cs" />
     <Compile Include="Assets\Scripts\AtivaArmadilha.cs" />

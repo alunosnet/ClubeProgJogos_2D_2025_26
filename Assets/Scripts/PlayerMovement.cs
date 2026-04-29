@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform pe_e;
     public Transform pe_d;
     public float maxDistance = 0.5f;
+    public bool direita = true;
+    public LayerMask layerMask;
     //Referência para rigidbody2d
     Rigidbody2D rb;
     Animator animator;
@@ -52,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
             VerificaPeChao(pe_e);
         //se está com os pés no chão e está a fazer a animação de saltar
         //parar
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
         if (animator.GetCurrentAnimatorStateInfo(0).shortNameHash==-1481439722 &&
             IsGrounded)
         {
@@ -60,11 +61,14 @@ public class PlayerMovement : MonoBehaviour
         }
         //flip do sprite quando está a andar para a esquerda
         sr.flipX = (horizontal < 0);
+        if (horizontal!=0)
+            direita = (horizontal > 0);
     }
 
     private void VerificaPeChao(Transform pe)
     {
-        RaycastHit2D raio = Physics2D.Raycast(pe.position, Vector2.down, maxDistance);
+        RaycastHit2D raio = Physics2D.Raycast(pe.position, Vector2.down, maxDistance,layerMask);
+
         //Desenha o raio que deteta o chão
         Debug.DrawRay(pe.position, Vector3.down * maxDistance, Color.red);
         if (raio.collider == null)
@@ -73,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Debug.Log(raio.collider.name);
             IsGrounded = true;
         }
     }

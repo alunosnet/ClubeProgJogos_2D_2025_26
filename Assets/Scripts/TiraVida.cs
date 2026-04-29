@@ -1,6 +1,8 @@
 using UnityEngine;
 /// <summary>
 /// Deve ser colocado numa armadilha ou npc que tira vida com contacto
+/// Para não tirar vida ao player colocar o objeto e o player em layers diferentes
+/// e alterar a matriz de colisiões na settings do projeto
 /// </summary>
 [RequireComponent(typeof(Collider2D))]
 public class TiraVida : MonoBehaviour

@@ -464,7 +464,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9023485, y: 4.055436, z: -10}
+  m_LocalPosition: {x: 3.9166803, y: 4.0555363, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -632,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637357076}
   - component: {fileID: 637357075}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LimiteCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,6 +1114,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79c3d38079587a4e86dc1b03fba7a40, type: 3}
+--- !u!1 &1631163261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631163262}
+  m_Layer: 3
+  m_Name: PontoAtirar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631163262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631163261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2063304810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1730534204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6506187194974832751, guid: 34006c964ff0a3f40a90cde16739eb88, type: 3}
@@ -1281,6 +1312,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Vida
   MaxVida: 100
   VidaAtual: 0
+  TempoParaDestruir: 5
+--- !u!114 &2063304818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063304803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f9dffd11e5a3348ab38e8079a91824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Atirar
+  pontoAtirar: {fileID: 1631163262}
+  forca: 500
+  objetoAAtirar: {fileID: 9177086373013722310, guid: 7a9487bab156abf42a2e95be5f824e94, type: 3}
+  pm: {fileID: 0}
+  TempoDeVida: 5
 --- !u!1 &2071127307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204163125088224088, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2030277508389238508, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1582,6 +1635,10 @@ PrefabInstance:
     - target: {fileID: 2731542600685036019, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731542600685036019, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2731542600685036019, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
       propertyPath: m_TagString
@@ -1635,13 +1692,35 @@ PrefabInstance:
       propertyPath: pe_e
       value: 
       objectReference: {fileID: 421372488}
+    - target: {fileID: 3854713625133578724, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: maxDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854713625133578724, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733609797233372890, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813443971027606554, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3607815053023010362, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1631163262}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2731542600685036019, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063304811}
+    - targetCorrespondingSourceObject: {fileID: 2731542600685036019, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2063304818}
   m_SourcePrefab: {fileID: 100100000, guid: 9d4679467639e5f42bade0e96656df59, type: 3}
 --- !u!1001 &8103747389772861582
 PrefabInstance:

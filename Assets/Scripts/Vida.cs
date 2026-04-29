@@ -7,6 +7,7 @@ public class Vida : MonoBehaviour
 {
     public int MaxVida = 100;
     public int VidaAtual;
+    public float TempoParaDestruir = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,8 +26,8 @@ public class Vida : MonoBehaviour
         if (VidaAtual <0)
         {
             VidaAtual = 0;
+            Destroy(gameObject, TempoParaDestruir);
             return false; //Morreu
-            //Destruir o gameobject?
         }
         return true; //Não morreu
     }
